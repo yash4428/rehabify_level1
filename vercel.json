@@ -1,18 +1,8 @@
 {
   "version": 2,
   "public": true,
-  "builds": [
-    { "src": "**/*", "use": "@vercel/static" }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
-        { "key": "Cross-Origin-Embedder-Policy", "value": "require-corp" },
-        { "key": "Permissions-Policy", "value": "camera=(self), microphone=(), geolocation=()" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
-      ]
-    }
+  "builds": [{ "src": "**", "use": "@vercel/static" }],
+  "routes": [
+    { "src": "/", "dest": "/index.html" }
   ]
 }
