@@ -208,14 +208,14 @@ function startCelebrationStar() {
       }
       // Try top frame (if allowed)
       if (window.top && window.top.location) {
-        window.top.location.href = ".";
+        window.top.location.href = "/";
       } else {
-        window.location.href = ".";
+        window.location.href = "/";
       }
     } catch (err) {
       console.error("Redirect fallback:", err);
       // absolute fallback
-      window.location.href = ".";
+      window.location.href = "/";
     }
   }, 1500);
 }
@@ -231,11 +231,11 @@ function endSession(){
       if (window.parent && window.parent !== window) {
         window.parent.postMessage({ type:'rehabify-finish-session' }, '*');
       } else {
-        window.location.href = '.';
+        window.location.href = '/';
       }
     } catch {
       // hard fallback
-      window.location.href = '.';
+      window.location.href = '/';
     }
   }, 1200);
 }
