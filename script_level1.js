@@ -231,11 +231,11 @@ function endSession(){
       if (window.parent && window.parent !== window) {
         window.parent.postMessage({ type:'rehabify-finish-session' }, '*');
       } else {
-        window.location.href = './';
+        window.location.href = '.';
       }
     } catch {
       // hard fallback
-      window.location.href = './';
+      window.location.href = '.';
     }
   }, 1200);
 }
